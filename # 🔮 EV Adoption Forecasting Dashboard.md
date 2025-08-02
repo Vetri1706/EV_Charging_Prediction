@@ -42,3 +42,11 @@ This project was developed as part of **AICTE Internship Cycle 2**.
 ---
 
 ## 📂 Project Structure
+📁 EV-Adoption-Forecast
+- app.py # Main Streamlit app
+- forecasting_ev_model.pkl # Trained ML model
+- preprocessed_ev_data.csv # Preprocessed dataset
+- requirements.txt # Dependencies
+- README.md # Project documentation
+- images/ # Images for app UI
+
