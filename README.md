@@ -1,68 +1,53 @@
-# EV Charging Adoption Forecast – Internship Task
+# 🔮 EV Adoption Forecasting Dashboard
 
-## 📘 Problem Statement
-Forecast county-level electric vehicle (EV) adoption for the next 3 years using historical data to support regional planning and policymaking.
+An interactive Streamlit web application that forecasts county-level Electric Vehicle (EV) adoption for the next 3 years using historical data and machine learning.  
+This project was developed as part of **AICTE Internship Cycle 2**.
 
-## 🧠 Model
-- **Type:** Random Forest Regressor (scikit-learn) serialized with `joblib`.  
-- **Features:** Lag EV totals, 3-month rolling mean, percentage changes, and trend slope based on recent cumulative growth.  
-- **Forecast Horizon:** 36 months per county, with cumulative prediction and growth percentage insights.  
-- **Comparison:** Supports multi-county cumulative trend comparison.
+---
 
-## 📁 Files Included
-1. `app.py` – Streamlit application integrating data, model loading, forecasting logic, visualization, and export.  
-2. `forecasting_ev_model.pkl` – Trained & serialized regression model.  
-3. `preprocessed_ev_data.csv` – Cleaned historical EV adoption data with required columns (`Date`, `County`, `county_encoded`, `months_since_start`, `Electric Vehicle (EV) Total`, etc.).  
-4. `requirements.txt` – Pinned dependencies for reproducible environment.  
-5. `README.md` – Project documentation (includes setup, usage, methodology, objectives).  
-6. `ev-car-factory.jpg` *(optional)* – UI/banner image for the dashboard.
-7. `New York_ev_forecast.csv`- output of the forecast is given in a csv format  
+## 📌 Features
+- **County Selection** – View historical & forecasted EV adoption trends for any county.
+- **3-Year Forecast** – Predict cumulative EV adoption using a trained regression model.
+- **Multi-County Comparison** – Compare adoption growth across up to 3 counties.
+- **Growth Insights** – Display forecasted growth percentages.
+- **Downloadable Forecast** – Export forecast data as CSV.
 
+---
 
+## 🛠 Tools & Technologies
+1. **Python** – Core programming language.
+2. **Pandas & NumPy** – Data preprocessing & feature engineering.
+3. **scikit-learn & Joblib** – Machine learning model training and persistence.
+4. **Streamlit & Matplotlib** – Interactive UI & visualization.
+5. **OS & Caching** – File handling and `st.cache_data` for performance.
 
-## How to Run
-1. 
-1. **Clone the repository**
-   ```bash
+---
 
-   git clone https://github.com/Vetri1706/EV-Adoption-Forecast.git
-   cd EV-Adoption-Forecast
-# Activate on Windows
-venv\Scripts\activate
-# Activate on Mac/Linux
-source venv/bin/activate
-# Run
-streamlit run app.py
-## ▶️ Usage
+## 📊 Methodology
+1. **Data Collection** – Load historical EV adoption data.
+2. **Feature Engineering** – Create lag, rolling average, and growth rate features.
+3. **Model Training** – Train and validate a Random Forest Regressor model.
+4. **Forecasting** – Predict EV adoption trends for the next 36 months.
+5. **Deployment** – Build an interactive Streamlit dashboard with export options.
 
-1. After launching, select a county from the sidebar to view its historical and 3-year forecasted EV adoption.  
-2. Optionally pick up to 3 counties to compare cumulative trends and growth percentages.  
-3. Toggle the forecast chart visibility and download the forecast CSV for offline analysis.  
-4. Insights like percentage growth are shown automatically beneath the chart.
+---
 
-## ⚙️ Configuration / Notes
+## 🎯 Learning Objectives
+1. Perform data preprocessing & feature engineering for time-series forecasting.
+2. Train and deploy a machine learning regression model.
+3. Visualize historical vs forecasted trends interactively.
+4. Enable multi-county comparisons with growth metrics.
+5. Build a robust, user-friendly web app.
 
-- Ensure `preprocessed_ev_data.csv` contains columns: `Date`, `County`, `county_encoded`, `months_since_start`, and `Electric Vehicle (EV) Total`.  
-- The model file `forecasting_ev_model.pkl` must be a trained scikit-learn regressor saved with `joblib.dump(...)`.  
-- Column order/feature engineering in the app must match how the model was trained (lags, roll mean, pct changes, slope).
+---
 
-## 🛠 Troubleshooting
-
-- **Model not found**: Verify `forecasting_ev_model.pkl` is in the same directory as `app.py` and loaded via the robust path logic.  
-- **Invalid model / no `.predict()`**: Replace with a properly serialized trained estimator (`joblib.dump(trained_model, ...)`).  
-- **Feature mismatch errors**: Ensure the app’s engineered feature names align with what the model expects (see `EXPECTED_FEATURE_COLS`).  
-- **Slow load**: Enable caching (`@st.cache_data`) for data and avoid retraining inside the app.
-
-## 📦 requirements.txt snippet
-- pandas
-- numpy
-- scikit-learn
-- joblib
-- streamlit
-- matplotlib
-
-
-
-
+## 📂 Project Structure
+📁 EV-Adoption-Forecast
+- app.py # Main Streamlit app
+- forecasting_ev_model.pkl # Trained ML model
+- preprocessed_ev_data.csv # Preprocessed dataset
+- requirements.txt # Dependencies
+- README.md # Project documentation
+- images/ # Images for app UI
 
 
