@@ -15,7 +15,8 @@ Forecast county-level electric vehicle (EV) adoption for the next 3 years using 
 3. `preprocessed_ev_data.csv` – Cleaned historical EV adoption data with required columns (`Date`, `County`, `county_encoded`, `months_since_start`, `Electric Vehicle (EV) Total`, etc.).  
 4. `requirements.txt` – Pinned dependencies for reproducible environment.  
 5. `README.md` – Project documentation (includes setup, usage, methodology, objectives).  
-6. `ev-car-factory.jpg` *(optional)* – UI/banner image for the dashboard.  
+6. `ev-car-factory.jpg` *(optional)* – UI/banner image for the dashboard.
+7. `New York_ev_forecast.csv`- output of the forecast is given in a csv format  
 
 
 
